@@ -17,13 +17,12 @@ func enter():
 		new_rect.position=Vector2(84,22)
 		sprite.set_region_rect(new_rect)
 
-func process(delta):
+func process(_delta):
 	if !is_in_sight_range(target):
-		exit()
+		state_machine.change_to("sentinel")
 
 func exit():
 	sprite.set_region_rect(previous_rect)
-	state_machine.change_to("sentinel")
 
 func is_in_sight_range(other:Node2D)->bool:
 	var distance=(state_owner.position-other.position).length()

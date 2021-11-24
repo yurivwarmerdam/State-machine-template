@@ -11,12 +11,8 @@ func is_in_sight_range(other:Node2D)->bool:
 		return true
 	else: return false
 
-func process(delta):
+func process(_delta):
 	for walker in Whiteboard.walkers:
 		if is_in_sight_range(walker):
-			change_to_attack()
+			state_machine.change_to("attack")
 			break
-			
-
-func change_to_attack():
-	state_machine.change_to("attack")

@@ -31,6 +31,8 @@ func change_to(state_name:String):
 	state=get_node(state_name)
 	_enter_state()
 
+#this makes the FSM into a cellular automata. Don't ask me what exactly that means. 
+#It's useful, though.
 func back():
 	if history.size() >0:
 		if !is_same_type(history[history.size()-1],state):
@@ -40,20 +42,21 @@ func back():
 		state = history.pop_back()
 		_enter_state()
 
+#This check gives you access to a "bonus" exit() function, to clean up
+#anything that you DO want to keep when staying inside the state "domain"
 func is_same_type(first:State, second:State)->bool:
-	else:
-		return first.get_class() == second.get_class()
+	return first.get_class() == second.get_class()
 
+#----------------------
 #processing/input delegation block:
+#----------------------
 func _process(delta):
 	if state.has_method("process"): state.process(delta)
 func _physics_process(delta):
 	if state.has_method("physics_process"): state.physics_process(delta)
+	
+#Note: these two I am still doubting if it should be here. Be careful with it.
 func _input(event):
 	if state.has_method("input"): state.input(event)
 func _unhandled_input(event):
 	if state.has_method("unhandled_input"): state.unhandled_input(event)
-#TODO: evaluate if I want to keep this here, or pipe it through unhandled_input, and set something to handled() or whatever.
-func handle_click(event:InputEvent,entity:Node2D)->bool:
-	if state.has_method("handle_click"): return state.handle_click(event,entity)
-	else: return false

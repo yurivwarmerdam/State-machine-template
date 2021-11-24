@@ -1,5 +1,8 @@
 extends Node
 class_name State
+#Godot is weird in that it does not rturn the class_name when you call get_class().
+#instead, you can override the get_class method like so, 
+#and use a hierarchical state machien that way.
 func get_class(): return "State"
 
 #this is always of type State_machine

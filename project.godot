@@ -33,20 +33,26 @@ _global_script_classes=[ {
 "class": "walker",
 "language": "GDScript",
 "path": "res://state_machine/walker/walker.gd"
+}, {
+"base": "State",
+"class": "walker_state",
+"language": "GDScript",
+"path": "res://state_machine/walker/walker_state.gd"
 } ]
 _global_script_class_icons={
 "State": "",
 "myName": "",
 "sentinel_monster": "",
 "state_machine": "",
-"walker": ""
+"walker": "",
+"walker_state": ""
 }
 
 [application]
 
 config/name="StateMachineKata"
 run/main_scene="res://main.tscn"
-config/icon="res://icon.png"
+config/icon="res://art/assets/display_image.png"
 
 [autoload]
 

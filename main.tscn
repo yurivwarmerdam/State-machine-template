@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://state_machine/sentinel_monster/sentinel_monster.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Menger_space.tscn" type="PackedScene" id=2]
 [ext_resource path="res://state_machine/walker/walker.tscn" type="PackedScene" id=3]
-[ext_resource path="res://overriding_experiment.tscn" type="PackedScene" id=5]
 
 [node name="main" type="Node"]
 
@@ -30,6 +29,3 @@ position = Vector2( 666.752, 98.115 )
 
 [node name="walker" parent="walkers" instance=ExtResource( 3 )]
 position = Vector2( 15.1119, 67.4947 )
-
-[node name="Node2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 341.404, 380.085 )
