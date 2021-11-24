@@ -1,0 +1,57 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://State.gd"
+}, {
+"base": "Node",
+"class": "myName",
+"language": "GDScript",
+"path": "res://state_machine/zz_state_machine_proto/state_proto.gd"
+}, {
+"base": "Node2D",
+"class": "sentinel_monster",
+"language": "GDScript",
+"path": "res://state_machine/sentinel_monster/sentinel_monster.gd"
+}, {
+"base": "Node",
+"class": "state_machine",
+"language": "GDScript",
+"path": "res://state_machine/state_machine.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "walker",
+"language": "GDScript",
+"path": "res://state_machine/walker/walker.gd"
+} ]
+_global_script_class_icons={
+"State": "",
+"myName": "",
+"sentinel_monster": "",
+"state_machine": "",
+"walker": ""
+}
+
+[application]
+
+config/name="StateMachineKata"
+run/main_scene="res://main.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Whiteboard="*res://Whiteboard.gd"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

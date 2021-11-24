@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://state_machine/sentinel_monster/attack.gd" type="Script" id=1]
+[ext_resource path="res://state_machine/sentinel_monster/sentinel.gd" type="Script" id=2]
+[ext_resource path="res://state_machine/state_machine.gd" type="Script" id=3]
+
+[node name="state_machine" type="Node"]
+script = ExtResource( 3 )
+
+[node name="sentinel" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="attack" type="Node" parent="."]
+script = ExtResource( 1 )

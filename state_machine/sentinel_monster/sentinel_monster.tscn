@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://state_machine/sentinel_monster/attack.gd" type="Script" id=1]
+[ext_resource path="res://state_machine/state_machine.gd" type="Script" id=2]
+[ext_resource path="res://state_machine/sentinel_monster/sentinel.gd" type="Script" id=3]
+[ext_resource path="res://art/assets/Characters.png" type="Texture" id=4]
+[ext_resource path="res://state_machine/sentinel_monster/sentinel_monster.gd" type="Script" id=5]
+
+[node name="sentinel_monster" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 32, 22, 14, 11 )
+
+[node name="state_machine" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="sentinel" type="Node" parent="state_machine"]
+script = ExtResource( 3 )
+
+[node name="attack" type="Node" parent="state_machine"]
+script = ExtResource( 1 )
